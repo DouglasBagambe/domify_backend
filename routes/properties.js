@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Property = require("../models/Property");
+const Property = require("../models/property");
 
 // Get all properties with pagination and filters
 router.get("/", async (req, res) => {

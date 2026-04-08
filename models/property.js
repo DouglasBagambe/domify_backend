@@ -148,38 +148,7 @@ const propertySchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-    // Blockchain/Starknet fields
-    blockchainTokenId: {
-      type: String,
-      default: null,
-      index: true,
-    },
-    blockchainTxHash: {
-      type: String,
-      default: null,
-    },
-    onChain: {
-      type: Boolean,
-      default: false,
-      index: true,
-    },
-    verified: {
-      type: Boolean,
-      default: false,
-      index: true,
-    },
-    verificationTxHash: {
-      type: String,
-      default: null,
-    },
-    verifiedAt: {
-      type: Date,
-      default: null,
-    },
-    ownerWalletAddress: {
-      type: String,
-      default: null,
-    },
+
   },
   {
     timestamps: true,

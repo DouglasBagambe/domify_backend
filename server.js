@@ -22,7 +22,7 @@ mongoose
 // Routes
 app.use("/api/properties", require("./routes/properties"));
 app.use("/api/appointments", require("./routes/appointments"));
-app.use("/api/starknet", require("./routes/starknet"));
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
