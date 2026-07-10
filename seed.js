@@ -31,10 +31,19 @@ const seedDatabase = async () => {
       return typeMap[type] || typeMap["house"];
     };
 
+    const sampleVideos = [
+      "https://assets.mixkit.co/videos/preview/mixkit-beautiful-modern-home-design-exterior-44167-large.mp4",
+      "https://assets.mixkit.co/videos/preview/mixkit-modern-house-with-a-lawn-in-autumn-48906-large.mp4",
+      "https://assets.mixkit.co/videos/preview/mixkit-stunning-modern-house-exterior-design-51478-large.mp4",
+      "https://assets.mixkit.co/videos/preview/mixkit-spacious-modern-living-room-with-cozy-furniture-44171-large.mp4",
+      "https://assets.mixkit.co/videos/preview/mixkit-dining-room-of-a-luxury-apartment-48905-large.mp4"
+    ];
+
     const properties = [];
     for (let i = 1; i <= 50; i++) {
       const type = types[Math.floor(Math.random() * types.length)];
       const purpose = purposes[Math.floor(Math.random() * purposes.length)];
+      const selectedVideo = sampleVideos[i % sampleVideos.length];
       
       properties.push({
         title: `Premium ${type.charAt(0).toUpperCase() + type.slice(1)} exactly for ${purpose}`,
@@ -52,15 +61,15 @@ const seedDatabase = async () => {
           dimensions: "50x100 ft",
         },
         images: generateImages(type),
-        videos: [],
+        videos: [selectedVideo],
         tags: ["Premium", "Hot Deal", "Verified"],
         amenities: type === 'land' ? ["Water Ready", "Power Ready"] : ["WiFi", "Parking", "Security", "Air Conditioning"],
         agent: {
           name: ["Douglas Bagambe", "John Doe", "Jane Smith"][Math.floor(Math.random() * 3)],
           phone: "+256700000000",
-          email: "agent@domify.com",
+          email: "agent@dnbhomes.com",
           photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256",
-          company: "Domify Real Estate",
+          company: "DNB Homes",
           position: "Senior Agent"
         },
         isFeatured: Math.random() > 0.8, // 20% chance to be featured
